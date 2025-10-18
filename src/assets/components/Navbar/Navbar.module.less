@@ -1,0 +1,93 @@
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.left {
+    display: contents;
+}
+.right {
+    display: none;
+}
+.menu {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .nav { 
+        p { 
+            .tp6();
+            color: @gray500;
+        }
+        p:hover, p:active {
+            cursor: pointer;
+        }
+        p:active {
+            color: @gray950;
+        }
+    }
+    .menuIcon {
+        display: none;
+    }
+    .left, .right {
+        display: flex;
+    }
+    .left {
+        gap: 4rem;
+        align-items: center;
+    }
+    .right {
+        align-items: center;
+        gap: 2.5rem;
+    }
+    .menu {
+        display: flex;
+        gap: 2.5rem;
+        .featureDropdown {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 1.5rem;
+            .featureDrop {
+                border-radius: 10px;
+                background-color: white;
+                padding: 1.5rem;
+                display: none;
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
+                filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.15));
+                position: absolute;
+                top: 1.5rem;
+                article {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    white-space: nowrap;
+                    gap: 1rem;
+                }
+                span {
+                    display: flex;
+                    gap: 1rem;
+                    align-items: center
+                }
+                p {
+                    .tp6();
+                    color: @gray500;
+                }
+            }
+            .featureDrop.visible {
+                display: flex;
+            }
+        }
+    }
+    .feature {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        img {
+            cursor: pointer;
+        }
+    }
+}

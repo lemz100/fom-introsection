@@ -1,3 +1,152 @@
 #root {
-  
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  padding-bottom: 6rem;
+    min-height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+picture {
+    flex: none; 
+    width: 100vw;
+    img {
+        width: 100%;
+        max-height: 576px;
+    }
+}
+
+header, .content {
+    align-self: center;
+    width: 90%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    .bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .text-content {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        gap: 1.5rem;
+        .title {
+            .tp3();
+            color: @gray950;
+        }
+        .desc {
+            .tp5m();
+            color: @gray500;
+        }
+    }
+    .logos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        img {
+            width: 20%;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #root {
+        padding-top: 1.5rem;
+        padding-bottom: 3rem;
+    }
+    main {
+        gap: 2rem;
+    }
+
+    .content {
+        width: 100%;
+        gap: 4rem;
+        .bottom {
+            gap: 3.5rem;
+        }
+        .text-content {
+            gap: 2rem;
+            .title {
+                .tp2();
+            }
+            .desc {
+                max-width: 55ch;
+                .tp4m();
+            }
+        }
+        .logos {
+            gap: 3.5rem;
+            width: 90%;
+            img {
+                opacity: 0.3;
+                width: 50%;
+            }
+        }
+    }
+    
+}
+
+@media screen and (min-width: 1024px) {
+    picture {
+        width: auto;
+        img {
+            max-height: none;
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    #root {
+        padding-bottom: 7.5rem;
+    }
+    main {
+        gap: 4.5rem;
+    }
+    picture {
+        img {
+            max-height: 640px;
+        }
+    }
+    .content {
+        flex-direction: row-reverse;
+        width: 80%;
+        justify-content: space-between;
+        gap: 2rem;
+        .bottom {
+            align-self: flex-end;
+            height: 540px;
+            width: 47%;
+            justify-content: space-between;
+            .text-content {
+                align-items: flex-start;
+                text-align: left;
+                gap: 3rem;
+                .title {
+                    .tp1();
+                    max-width: 11ch;
+                }
+                .desc {
+                    max-width: 46ch;
+                }
+            }
+            .logos {
+                gap: 2.5rem;
+                img {
+                    opacity: 1;
+                }
+            }
+        }
+    }
 }
